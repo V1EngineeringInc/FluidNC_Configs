@@ -1,0 +1,33 @@
+[
+ {
+  "language": "en",
+  "enable_camera": "false",
+  "auto_load_camera": "false",
+  "camera_address": "",
+  "enable_DHT": "false",
+  "enable_lock_UI": "false",
+  "enable_ping": "true",
+  "enable_control_panel": "true",
+  "enable_grbl_probe_panel": "false",
+  "enable_grbl_panel": "true",
+  "enable_files_panel": "true",
+  "has_TFT_SD": "false",
+  "has_TFT_USB": "false",
+  "probemaxtravel": "40",
+  "probefeedrate": "100",
+  "proberetract": "1",
+  "probetouchplatethickness": "0.5",
+  "autoreport_interval": "1500",
+  "interval_positions": "3",
+  "interval_status": "3",
+  "xy_feedrate": "1800",
+  "z_feedrate": "900",
+  "a_feedrate": "100",
+  "b_feedrate": "100",
+  "c_feedrate": "100",
+  "f_filters": "g;G;gco;GCO;gcode;GCODE;nc;NC;ngc;NCG;tap;TAP;txt;TXT",
+  "enable_autoscroll": "true",
+  "enable_verbose_mode": "true",
+  "enable_commands_panel": "true"
+ }
+]
