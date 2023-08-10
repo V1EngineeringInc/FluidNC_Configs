@@ -1,6 +1,6 @@
 board: Jackpot TMC2209
 name: LowRider
-meta: 07-31-2023 RyanZ
+meta: 08-10-2023 RyanZ
 
 planner_blocks: 32
 
@@ -42,14 +42,14 @@ axes:
       limit_pos_pin: NO_PIN
       limit_all_pin: NO_PIN
       hard_limits: false
-      pulloff_mm: 5.000
+      pulloff_mm: 4.000
       tmc_2209:
         uart_num: 1
         addr: 0
         cs_pin: NO_PIN
         r_sense_ohms: 0.110
-        run_amps: 0.400
-        hold_amps: 0.300
+        run_amps: 0.600
+        hold_amps: 0.400
         microsteps: 8
         stallguard: 0
         stallguard_debug: false
@@ -84,14 +84,14 @@ axes:
       limit_pos_pin: NO_PIN
       limit_all_pin: NO_PIN
       hard_limits: false
-      pulloff_mm: 5.000
+      pulloff_mm: 4.000
       tmc_2209:
         uart_num: 1
         addr: 1
         cs_pin: NO_PIN
         r_sense_ohms: 0.110
-        run_amps: 0.400
-        hold_amps: 0.300
+        run_amps: 0.600
+        hold_amps: 0.400
         microsteps: 8
         stallguard: 0
         stallguard_debug: false
@@ -111,14 +111,14 @@ axes:
       limit_pos_pin: NO_PIN
       limit_all_pin: NO_PIN
       hard_limits: false
-      pulloff_mm: 5.000
+      pulloff_mm: 4.000
       tmc_2209:
         uart_num: 1
         addr: 3
         cs_pin: i2so.14
         r_sense_ohms: 0.110
-        run_amps: 0.400
-        hold_amps: 0.300
+        run_amps: 0.600
+        hold_amps: 0.400
         microsteps: 8
         stallguard: 0
         stallguard_debug: false
@@ -153,14 +153,14 @@ axes:
       limit_pos_pin: gpio.32:high
       limit_all_pin: NO_PIN
       hard_limits: false
-      pulloff_mm: 7.000
+      pulloff_mm: 4.000
       tmc_2209:
         uart_num: 1
         addr: 2
         cs_pin: NO_PIN
         r_sense_ohms: 0.110
-        run_amps: 0.400
-        hold_amps: 0.300
+        run_amps: 0.600
+        hold_amps: 0.400
         microsteps: 8
         stallguard: 0
         stallguard_debug: false
@@ -180,14 +180,14 @@ axes:
       limit_pos_pin: gpio.34:high
       limit_all_pin: NO_PIN
       hard_limits: false
-      pulloff_mm: 7.000
+      pulloff_mm: 4.000
       tmc_2209:
         uart_num: 1
         addr: 3
         cs_pin: i2so.19
         r_sense_ohms: 0.110
-        run_amps: 0.400
-        hold_amps: 0.300
+        run_amps: 0.600
+        hold_amps: 0.400
         microsteps: 8
         stallguard: 0
         stallguard_debug: false
