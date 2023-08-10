@@ -1,6 +1,6 @@
 name: TMC2209 XY Servo Laser
 board: FluidNC Pen/Laser 2209
-meta: "For Zenxy"
+meta: 8-10-23 Ryan Z
 
 stepping:
   engine: RMT
