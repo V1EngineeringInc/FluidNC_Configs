@@ -1,13 +1,13 @@
 board: Jackpot TMC2209
 name: LowRider
-meta: 09-10-2023 RyanZ
+meta: 10-30-2023 RyanZ
 
 planner_blocks: 32
 
 stepping:
   engine: I2S_STATIC
   idle_ms: 255
-  pulse_us: 4
+  pulse_us: 1
   dir_delay_us: 1
   disable_delay_us: 0
   
