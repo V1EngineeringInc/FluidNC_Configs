@@ -1,16 +1,16 @@
 board: Jackpot TMC2209
 name: MPCNC
-meta: 10-30-2023 RyanZ
+meta: 11-29-2023 RyanZ
 
 planner_blocks: 32
 
 stepping:
   engine: I2S_STATIC
   idle_ms: 255
-  pulse_us: 1
+  pulse_us: 4
   dir_delay_us: 1
   disable_delay_us: 0
-  
+
 uart1:
   txd_pin: gpio.0
   rxd_pin: gpio.4
@@ -20,7 +20,7 @@ uart1:
 
 axes:
   shared_stepper_disable_pin: NO_PIN
-  
+
   x:
     steps_per_mm: 50.000
     max_rate_mm_per_min: 9000.000
@@ -62,7 +62,7 @@ axes:
         direction_pin: I2SO.1
         step_pin: I2SO.2
         disable_pin: I2SO.0
-    
+
     #A
     motor1:
       limit_neg_pin: gpio.35:high
@@ -89,8 +89,7 @@ axes:
         step_pin: I2SO.13
         direction_pin: I2SO.12
         disable_pin: I2SO.15
-        
-        
+
   y:
     steps_per_mm: 50.000
     max_rate_mm_per_min: 9000.000
@@ -132,7 +131,7 @@ axes:
         step_pin: I2SO.5
         direction_pin: I2SO.4
         disable_pin: I2SO.7
-   
+
     #B
     motor1:
       limit_neg_pin: gpio.34:high
@@ -200,7 +199,7 @@ axes:
         step_pin: I2SO.10
         direction_pin: I2SO.9
         disable_pin: I2SO.8
-                 
+
 #  c:
 #    steps_per_mm: 80.000
 #    max_rate_mm_per_min: 5000.000
@@ -243,7 +242,6 @@ axes:
 #        direction_pin: I2SO.20
 #        disable_pin: I2SO.23
 
-
 i2so:
   bck_pin: gpio.22
   data_pin: gpio.21
@@ -280,7 +278,7 @@ control:
   macro0_pin: NO_PIN
   macro1_pin: NO_PIN
   macro2_pin: NO_PIN
-  macro3_pin: NO_PIN  
+  macro3_pin: NO_PIN
 
 macros:
   startup_line0:
@@ -289,7 +287,7 @@ macros:
   macro1:
   macro2:
   macro3:
-  
+
 user_outputs:
   analog0_pin: NO_PIN
   analog1_pin: NO_PIN
