@@ -1,12 +1,12 @@
 name: TMC2209 XY Servo Laser
 board: FluidNC Pen/Laser 2209
-meta: 8-10-23 Ryan Z
+meta: 11-29-23 Ryan Z
 
 stepping:
   engine: RMT
   idle_ms: 255
   dir_delay_us: 1
-  pulse_us: 2
+  pulse_us: 4
   disable_delay_us: 0
 
 uart1:
@@ -22,7 +22,7 @@ kinematics:
 
 start:
   must_home: false
-  
+
 axes:
   shared_stepper_disable_pin: gpio.13:high
   x:
@@ -41,7 +41,7 @@ axes:
       settle_ms: 500
       seek_scaler: 1.100
       feed_scaler: 1.100
-    
+
     motor0:
       limit_neg_pin: gpio.36:high
       #Diag pin is gpio.34
@@ -63,8 +63,7 @@ axes:
         direction_pin: gpio.12
         step_pin: gpio.14
         disable_pin: NO_PIN
-    
-    
+
     motor1:
       null_motor:
 
@@ -124,14 +123,14 @@ axes:
       settle_ms: 500
       seek_scaler: 1.100
       feed_scaler: 1.100
-    
+
     motor0:
       rc_servo:
         pwm_hz: 50
         output_pin: gpio.22
         min_pulse_us: 1000
         max_pulse_us: 2100
-        
+
 spi:
   miso_pin: gpio.19
   mosi_pin: gpio.23
@@ -147,12 +146,12 @@ coolant:
 
 probe:
   pin: gpio.32:low:pu
-  
+
 control:
   reset_pin: gpio.33:low:pu
   feed_hold_pin: gpio.4:low:pu
   cycle_start_pin: gpio.15:low:pu
-  
+
 # Laser:
 #  pwm_hz: 5000
 #  output_pin: gpio.27
