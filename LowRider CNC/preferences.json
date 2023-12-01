@@ -19,7 +19,7 @@
   "probetouchplatethickness": "0.5",
   "autoreport_interval": "0",
   "interval_positions": "3",
-  "interval_status": "0",
+  "interval_status": "10",
   "xy_feedrate": "2400",
   "z_feedrate": "1200",
   "a_feedrate": "100",
