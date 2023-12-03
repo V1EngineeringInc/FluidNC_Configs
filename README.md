@@ -1,5 +1,5 @@
 # FluidNC_Configs
-Configuration and support files for the FluidNC boards typically used and V1 Engineering.
+Configuration and support files for the FluidNC boards typically used with the V1 Engineering CNC machines.
 
 Detailed info and other links - [V1 Docs](https://docs.v1e.com/electronics/jackpot/)
 
@@ -7,6 +7,8 @@ Purchase a Jackpot CNC Controller - [V1 Shop](https://www.v1e.com/products/jackp
 
 
 ## Changelog
+
+11-29-23 - Clean up whitespaces, updated pulse settings. Preference report timing changes.
 
 10-30-23 - Change MPCNC homing, decrease pulse width to increase overall possible max speed.
 
