@@ -1,6 +1,6 @@
 board: Jackpot TMC2209
 name: LowRider
-meta: 11-29-2023 RyanZ
+meta: 03-15-2024 RyanZ
 
 planner_blocks: 32
 
@@ -48,7 +48,7 @@ axes:
         addr: 0
         cs_pin: NO_PIN
         r_sense_ohms: 0.110
-        run_amps: 0.680
+        run_amps: 0.800
         hold_amps: 0.500
         microsteps: 8
         stallguard: 0
@@ -90,7 +90,7 @@ axes:
         addr: 1
         cs_pin: NO_PIN
         r_sense_ohms: 0.110
-        run_amps: 0.680
+        run_amps: 0.800
         hold_amps: 0.500
         microsteps: 8
         stallguard: 0
@@ -117,7 +117,7 @@ axes:
         addr: 3
         cs_pin: i2so.14
         r_sense_ohms: 0.110
-        run_amps: 0.680
+        run_amps: 0.800
         hold_amps: 0.500
         microsteps: 8
         stallguard: 0
@@ -159,7 +159,7 @@ axes:
         addr: 2
         cs_pin: NO_PIN
         r_sense_ohms: 0.110
-        run_amps: 0.680
+        run_amps: 0.800
         hold_amps: 0.500
         microsteps: 8
         stallguard: 0
@@ -186,7 +186,7 @@ axes:
         addr: 3
         cs_pin: i2so.19
         r_sense_ohms: 0.110
-        run_amps: 0.680
+        run_amps: 0.800
         hold_amps: 0.500
         microsteps: 8
         stallguard: 0
