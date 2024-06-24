@@ -49,6 +49,7 @@ axes:
         cs_pin: NO_PIN
         r_sense_ohms: 0.110
         run_amps: 0.800
+        homing_amps: 0.800
         hold_amps: 0.500
         microsteps: 8
         stallguard: 0
@@ -91,6 +92,7 @@ axes:
         cs_pin: NO_PIN
         r_sense_ohms: 0.110
         run_amps: 0.800
+        homing_amps: 0.800
         hold_amps: 0.500
         microsteps: 8
         stallguard: 0
@@ -118,6 +120,7 @@ axes:
         cs_pin: i2so.14
         r_sense_ohms: 0.110
         run_amps: 0.800
+        homing_amps: 0.800
         hold_amps: 0.500
         microsteps: 8
         stallguard: 0
@@ -160,6 +163,7 @@ axes:
         cs_pin: NO_PIN
         r_sense_ohms: 0.110
         run_amps: 0.800
+        homing_amps: 0.800
         hold_amps: 0.500
         microsteps: 8
         stallguard: 0
@@ -187,6 +191,7 @@ axes:
         cs_pin: i2so.19
         r_sense_ohms: 0.110
         run_amps: 0.800
+        homing_amps: 0.800
         hold_amps: 0.500
         microsteps: 8
         stallguard: 0
@@ -228,7 +233,8 @@ axes:
 #        addr: 3
 #        cs_pin: i2so.22
 #        r_sense_ohms: 0.110
-#        run_amps: .1
+#        run_amps: 0.800
+#        homing_amps: 0.800
 #        hold_amps: 0.050
 #        microsteps: 16
 #        stallguard: 0
