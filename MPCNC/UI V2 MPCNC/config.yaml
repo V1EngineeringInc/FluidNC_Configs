@@ -7,7 +7,7 @@ planner_blocks: 32
 stepping:
   engine: I2S_STATIC
   idle_ms: 255
-  pulse_us: 4
+  pulse_us: 2
   dir_delay_us: 1
   disable_delay_us: 0
 
