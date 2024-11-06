@@ -1,13 +1,13 @@
 board: Jackpot TMC2209
-name: LowRider
-meta: 03-15-2024 RyanZ
+name: ZenXY
+meta: 10-31-2024 RyanZ
 
 planner_blocks: 32
 
 stepping:
   engine: I2S_STATIC
   idle_ms: 255
-  pulse_us: 2
+  pulse_us: 4
   dir_delay_us: 1
   disable_delay_us: 0
 
@@ -17,6 +17,9 @@ uart1:
   rts_pin: NO_PIN
   baud: 115200
   mode: 8N1
+
+kinematics:
+  corexy:
 
 axes:
   shared_stepper_disable_pin: NO_PIN
@@ -30,7 +33,7 @@ axes:
     homing:
       cycle: 2
       positive_direction: false
-      mpos_mm: 3
+      mpos_mm: 0
       feed_mm_per_min: 300.000
       seek_mm_per_min: 1500.000
       settle_ms: 500
@@ -50,7 +53,7 @@ axes:
         r_sense_ohms: 0.110
         run_amps: 0.800
         homing_amps: 0.800
-        hold_amps: 0.500
+        hold_amps: 0.700
         microsteps: 8
         stallguard: 0
         stallguard_debug: false
@@ -71,9 +74,9 @@ axes:
     max_travel_mm: 2440
     soft_limits: false
     homing:
-      cycle: 2
+      cycle: 1
       positive_direction: false
-      mpos_mm: 3
+      mpos_mm: 0
       feed_mm_per_min: 300.000
       seek_mm_per_min: 1500.000
       settle_ms: 500
@@ -93,7 +96,7 @@ axes:
         r_sense_ohms: 0.110
         run_amps: 0.800
         homing_amps: 0.800
-        hold_amps: 0.500
+        hold_amps: 0.700
         microsteps: 8
         stallguard: 0
         stallguard_debug: false
@@ -108,32 +111,32 @@ axes:
         disable_pin: I2SO.7
 
     #A
-    motor1:
-      limit_neg_pin: gpio.35:high
-      limit_pos_pin: NO_PIN
-      limit_all_pin: NO_PIN
-      hard_limits: false
-      pulloff_mm: 4.000
-      tmc_2209:
-        uart_num: 1
-        addr: 3
-        cs_pin: i2so.14
-        r_sense_ohms: 0.110
-        run_amps: 0.800
-        homing_amps: 0.800
-        hold_amps: 0.500
-        microsteps: 8
-        stallguard: 0
-        stallguard_debug: false
-        toff_disable: 0
-        toff_stealthchop: 5
-        toff_coolstep: 3
-        run_mode: StealthChop
-        homing_mode: StealthChop
-        use_enable: false
-        step_pin: I2SO.13
-        direction_pin: I2SO.12
-        disable_pin: I2SO.15
+    #motor1:
+   #   limit_neg_pin: gpio.35:high
+   #   limit_pos_pin: NO_PIN
+   #   limit_all_pin: NO_PIN
+   #   hard_limits: false
+   #   pulloff_mm: 4.000
+   #   tmc_2209:
+   #     uart_num: 1
+   #     addr: 3
+   #     cs_pin: i2so.14
+   #     r_sense_ohms: 0.110
+   #     run_amps: 0.800
+   #     homing_amps: 0.800
+   #     hold_amps: 0.500
+   #     microsteps: 8
+   #     stallguard: 0
+   #     stallguard_debug: false
+   #     toff_disable: 0
+   #     toff_stealthchop: 5
+   #     toff_coolstep: 3
+   #     run_mode: StealthChop
+   #     homing_mode: StealthChop
+   #     use_enable: false
+   #     step_pin: I2SO.13
+   #     direction_pin: I2SO.12
+   #     disable_pin: I2SO.15
 
   z:
     steps_per_mm: 200.000
@@ -142,9 +145,9 @@ axes:
     max_travel_mm: 300.000
     soft_limits: false
     homing:
-      cycle: 1
+      cycle: 0
       positive_direction: true
-      mpos_mm: 3
+      mpos_mm: 0
       feed_mm_per_min: 300.000
       seek_mm_per_min: 800.000
       settle_ms: 500
@@ -164,7 +167,7 @@ axes:
         r_sense_ohms: 0.110
         run_amps: 0.800
         homing_amps: 0.800
-        hold_amps: 0.500
+        hold_amps: 0.700
         microsteps: 8
         stallguard: 0
         stallguard_debug: false
@@ -179,32 +182,32 @@ axes:
         disable_pin: I2SO.8
 
      #B
-    motor1:
-      limit_neg_pin: NO_PIN
-      limit_pos_pin: gpio.34:high
-      limit_all_pin: NO_PIN
-      hard_limits: false
-      pulloff_mm: 4.000
-      tmc_2209:
-        uart_num: 1
-        addr: 3
-        cs_pin: i2so.19
-        r_sense_ohms: 0.110
-        run_amps: 0.800
-        homing_amps: 0.800
-        hold_amps: 0.500
-        microsteps: 8
-        stallguard: 0
-        stallguard_debug: false
-        toff_disable: 0
-        toff_stealthchop: 5
-        toff_coolstep: 3
-        run_mode: StealthChop
-        homing_mode: StealthChop
-        use_enable: false
-        step_pin: I2SO.18
-        direction_pin: I2SO.17
-        disable_pin: I2SO.16
+   # motor1:
+   #   limit_neg_pin: NO_PIN
+   #   limit_pos_pin: gpio.34:high
+   #   limit_all_pin: NO_PIN
+   #   hard_limits: false
+   #   pulloff_mm: 4.000
+   #   tmc_2209:
+   #     uart_num: 1
+   #     addr: 3
+   #     cs_pin: i2so.19
+   #     r_sense_ohms: 0.110
+   #     run_amps: 0.800
+   #     homing_amps: 0.800
+   #     hold_amps: 0.500
+   #     microsteps: 8
+   #     stallguard: 0
+   #     stallguard_debug: false
+   #     toff_disable: 0
+   #     toff_stealthchop: 5
+   #     toff_coolstep: 3
+   #     run_mode: StealthChop
+   #     homing_mode: StealthChop
+   #     use_enable: false
+   #     step_pin: I2SO.18
+   #     direction_pin: I2SO.17
+   #     disable_pin: I2SO.16
 
 #  c:
 #    steps_per_mm: 80.000
@@ -233,7 +236,7 @@ axes:
 #        addr: 3
 #        cs_pin: i2so.22
 #        r_sense_ohms: 0.110
-#        run_amps: 0.800
+#        run_amps: .8
 #        homing_amps: 0.800
 #        hold_amps: 0.050
 #        microsteps: 16

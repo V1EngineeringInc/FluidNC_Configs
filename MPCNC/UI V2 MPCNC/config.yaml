@@ -1,13 +1,13 @@
 board: Jackpot TMC2209
 name: MPCNC
-meta: 03-15-2024 RyanZ
+meta: 10-31-2024 RyanZ
 
 planner_blocks: 32
 
 stepping:
   engine: I2S_STATIC
   idle_ms: 255
-  pulse_us: 4
+  pulse_us: 2
   dir_delay_us: 1
   disable_delay_us: 0
 
@@ -30,7 +30,7 @@ axes:
     homing:
       cycle: 1
       positive_direction: false
-      mpos_mm: 0
+      mpos_mm: 3
       feed_mm_per_min: 300.000
       seek_mm_per_min: 1500.000
       settle_ms: 500
@@ -42,7 +42,7 @@ axes:
       limit_pos_pin: NO_PIN
       limit_all_pin: NO_PIN
       hard_limits: false
-      pulloff_mm: 5.000
+      pulloff_mm: 4.000
       tmc_2209:
         uart_num: 1
         addr: 0
@@ -50,7 +50,7 @@ axes:
         r_sense_ohms: 0.110
         run_amps: 0.800
         homing_amps: 0.800
-        hold_amps: 0.500
+        hold_amps: 0.700
         microsteps: 8
         stallguard: 0
         stallguard_debug: false
@@ -70,7 +70,7 @@ axes:
       limit_pos_pin: NO_PIN
       limit_all_pin: NO_PIN
       hard_limits: false
-      pulloff_mm: 5.000
+      pulloff_mm: 4.000
       tmc_2209:
         uart_num: 1
         addr: 3
@@ -78,7 +78,7 @@ axes:
         r_sense_ohms: 0.110
         run_amps: 0.800
         homing_amps: 0.800
-        hold_amps: 0.500
+        hold_amps: 0.700
         microsteps: 8
         stallguard: 0
         stallguard_debug: false
@@ -101,7 +101,7 @@ axes:
     homing:
       cycle: 2
       positive_direction: false
-      mpos_mm: 0
+      mpos_mm: 3
       feed_mm_per_min: 300.000
       seek_mm_per_min: 1500.000
       settle_ms: 500
@@ -113,7 +113,7 @@ axes:
       limit_pos_pin: NO_PIN
       limit_all_pin: NO_PIN
       hard_limits: false
-      pulloff_mm: 5.000
+      pulloff_mm: 4.000
       tmc_2209:
         uart_num: 1
         addr: 1
@@ -121,7 +121,7 @@ axes:
         r_sense_ohms: 0.110
         run_amps: 0.800
         homing_amps: 0.800
-        hold_amps: 0.500
+        hold_amps: 0.700
         microsteps: 8
         stallguard: 0
         stallguard_debug: false
@@ -141,7 +141,7 @@ axes:
       limit_pos_pin: NO_PIN
       limit_all_pin: NO_PIN
       hard_limits: false
-      pulloff_mm: 5.000
+      pulloff_mm: 4.000
       tmc_2209:
         uart_num: 1
         addr: 3
@@ -149,7 +149,7 @@ axes:
         r_sense_ohms: 0.110
         run_amps: 0.800
         homing_amps: 0.800
-        hold_amps: 0.500
+        hold_amps: 0.700
         microsteps: 8
         stallguard: 0
         stallguard_debug: false
@@ -164,7 +164,7 @@ axes:
         disable_pin: I2SO.16
   z:
     steps_per_mm: 200.000
-    max_rate_mm_per_min: 1200.000
+    max_rate_mm_per_min: 1800.000
     acceleration_mm_per_sec2: 80.000
     max_travel_mm: 300.000
     soft_limits: false
@@ -172,7 +172,7 @@ axes:
       cycle: 0
       positive_direction: true
       mpos_mm: 200.000
-      feed_mm_per_min: 300.000
+      feed_mm_per_min: 200.000
       seek_mm_per_min: 800.000
       settle_ms: 500
       seek_scaler: 1.100
@@ -191,7 +191,7 @@ axes:
         r_sense_ohms: 0.110
         run_amps: 0.800
         homing_amps: 0.800
-        hold_amps: 0.500
+        hold_amps: 0.700
         microsteps: 8
         stallguard: 0
         stallguard_debug: false

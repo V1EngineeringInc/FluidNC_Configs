@@ -1,0 +1,74 @@
+[
+ {
+  "name": "$MD",
+  "glyph": "remove",
+  "filename": "/macro1.g",
+  "target": "ESP",
+  "class": "btn btn-warning",
+  "index": 0
+ },
+ {
+  "name": "SAVE",
+  "glyph": "floppy-saved",
+  "filename": "/macro2.g",
+  "target": "ESP",
+  "class": "btn btn-danger",
+  "index": 1
+ },
+ {
+  "name": "26 ON",
+  "glyph": "ok-sign",
+  "filename": "/macro3.g",
+  "target": "ESP",
+  "class": "btn btn-info",
+  "index": 2
+ },
+ {
+  "name": "26 OFF",
+  "glyph": "remove",
+  "filename": "/macro4.g",
+  "target": "ESP",
+  "class": "btn btn-info",
+  "index": 3
+ },
+ {
+  "name": "27 ON",
+  "glyph": "ok",
+  "filename": "/macro5.g",
+  "target": "ESP",
+  "class": "btn btn-primary",
+  "index": 4
+ },
+ {
+  "name": "27 OFF",
+  "glyph": "remove",
+  "filename": "/macro6.g",
+  "target": "ESP",
+  "class": "btn btn-primary",
+  "index": 5
+ },
+ {
+  "name": "",
+  "glyph": "",
+  "filename": "",
+  "target": "",
+  "class": "",
+  "index": 6
+ },
+ {
+  "name": "",
+  "glyph": "",
+  "filename": "",
+  "target": "",
+  "class": "",
+  "index": 7
+ },
+ {
+  "name": "",
+  "glyph": "",
+  "filename": "",
+  "target": "",
+  "class": "",
+  "index": 8
+ }
+]
