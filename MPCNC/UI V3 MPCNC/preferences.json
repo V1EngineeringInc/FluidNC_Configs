@@ -278,19 +278,9 @@
     "key": ""
    }
   ],
-  "showextracontents": true,
+  "showextracontents": false,
   "openextrapanelsonstart": true,
-  "extracontents": [
-   {
-    "id": "ukj3sxuoa",
-    "name": "Tablet",
-    "icon": "Radio",
-    "target": "page",
-    "source": "tablet.html",
-    "type": "extension",
-    "refreshtime": "0"
-   }
-  ],
+  "extracontents": [],
   "showstatuspanel": true,
   "openstatusonstart": true,
   "showprobepanel": true,
