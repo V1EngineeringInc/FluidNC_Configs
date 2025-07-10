@@ -8,8 +8,9 @@
   "hapticfeedback": false,
   "audiofeedback": false,
   "showinformationpage": true,
-  "showmachinesettings": false,
+  "showmachinesettings": true,
   "enableautorepeat": false,
+  "enableshortcuts": false,
   "autorepeatdelay": "500",
   "emergencystop": "#SAFETYDOOR#",
   "fixedpanels": true,
@@ -24,10 +25,6 @@
     "value": "jog"
    },
    {
-    "id": "Terminal",
-    "name": "terminal"
-   },
-   {
     "id": "Macros",
     "name": "macros"
    },
@@ -36,16 +33,20 @@
     "name": "files"
    },
    {
+    "id": "Terminal",
+    "name": "terminal"
+   },
+   {
+    "id": "Probe",
+    "name": "probe"
+   },
+   {
     "id": "Laser",
     "name": "laser"
    },
    {
     "id": "Spindle",
     "name": "spindle"
-   },
-   {
-    "id": "Probe",
-    "name": "probe"
    },
    {
     "id": "Overrrides",
@@ -64,9 +65,9 @@
   "pollingcmds": [
    {
     "id": "samplepolling",
-    "name": "1s",
+    "name": "1.5s",
     "cmds": "?",
-    "refreshtime": "1000"
+    "refreshtime": "1500"
    }
   ],
   "showterminalpanel": true,
@@ -77,7 +78,10 @@
   "openfilesonstart": true,
   "filesfilter": "g;G;gco;GCO;gcode;GCODE;nc;txt;cnc;ngc",
   "flashfs": true,
+  "sort_flashfs_files": true,
   "directsd": true,
+  "sort_sd_files": true,
+  "default_filesystem": "DIRECTSD",
   "showjogpanel": true,
   "openjogonstart": true,
   "homesingleaxis": true,
@@ -90,9 +94,9 @@
   "showa": false,
   "showb": false,
   "showc": false,
-  "showu": true,
-  "showv": true,
-  "showw": true,
+  "showu": false,
+  "showv": false,
+  "showw": false,
   "xyfeedrate": "1000",
   "zfeedrate": "1000",
   "afeedrate": "1000",
@@ -223,7 +227,7 @@
     "key": "Delete"
    }
   ],
-  "shownotificationspanel": true,
+  "shownotificationspanel": false,
   "opennotificationsonstart": false,
   "notifautoscroll": true,
   "showmacrospanel": true,
@@ -279,7 +283,7 @@
    }
   ],
   "showextracontents": false,
-  "openextrapanelsonstart": true,
+  "openextrapanelsonstart": false,
   "extracontents": [],
   "showstatuspanel": true,
   "openstatusonstart": true,
@@ -288,19 +292,20 @@
   "probefeedrate": 20,
   "maxprobe": 15,
   "probethickness": "1",
-  "probepostcommand": "G10 L20 P0 #selected_axis##probe_thickness#",
+  "proberetract": "5",
+  "probepostcommand": "G10 L20 P1 #selected_axis##probe_thickness#;$J=G91 G21 F1000 Z#probe_retract#",
   "showlaserpanel": false,
   "openlaseronstart": true,
   "lasertest": 10,
   "lasertestprecent": 20,
   "lasermax": 1000,
-  "showspindlepanel": true,
+  "showspindlepanel": false,
   "openspindleonstart": true,
   "spindlespeed": 1000,
   "showM4ctrls": true,
   "showCoolantctrls": true,
   "showMistctrls": true,
-  "showM7ctrls": true,
+  "showM7ctrls": false,
   "showoverridespanel": true,
   "openoverridesonstart": true
  }
