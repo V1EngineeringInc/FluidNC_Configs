@@ -1,6 +1,6 @@
-board: Jackpot TMC2209
-name: MPCNC
-meta: 10-31-2024 RyanZ
+board: Jackpot3 TMC2226
+name: LowRider
+meta: 11-01-2025 RyanZ
 
 planner_blocks: 32
 
@@ -12,7 +12,7 @@ stepping:
   disable_delay_us: 0
 
 uart1:
-  txd_pin: gpio.0
+  txd_pin: gpio.16
   rxd_pin: gpio.4
   rts_pin: NO_PIN
   baud: 115200
@@ -28,7 +28,7 @@ axes:
     max_travel_mm: 1220
     soft_limits: false
     homing:
-      cycle: 1
+      cycle: 2
       positive_direction: false
       mpos_mm: 3
       feed_mm_per_min: 300.000
@@ -135,7 +135,7 @@ axes:
         direction_pin: I2SO.4
         disable_pin: I2SO.7
 
-    #B
+     #B
     motor1:
       limit_neg_pin: gpio.34:high
       limit_pos_pin: NO_PIN
@@ -162,25 +162,26 @@ axes:
         step_pin: I2SO.18
         direction_pin: I2SO.17
         disable_pin: I2SO.16
+
   z:
     steps_per_mm: 200.000
     max_rate_mm_per_min: 900.000
     acceleration_mm_per_sec2: 80.000
-    max_travel_mm: 300.000
+    max_travel_mm: 150.000
     soft_limits: false
     homing:
-      cycle: 0
+      cycle: 1
       positive_direction: true
-      mpos_mm: 200.000
-      feed_mm_per_min: 200.000
+      mpos_mm: 3
+      feed_mm_per_min: 300.000
       seek_mm_per_min: 800.000
       settle_ms: 500
       seek_scaler: 1.100
       feed_scaler: 1.100
 
     motor0:
-      limit_neg_pin: gpio.32:low
-      limit_pos_pin: NO_PIN
+      limit_neg_pin: NO_PIN
+      limit_pos_pin: gpio.32:high
       limit_all_pin: NO_PIN
       hard_limits: false
       pulloff_mm: 4.000
@@ -212,7 +213,7 @@ axes:
 #    max_travel_mm: 300.000
 #    soft_limits: false
 #    homing:
-#      cycle: 1
+#      cycle: 0
 #      positive_direction: true
 #      mpos_mm: 150.000
 #      feed_mm_per_min: 100.000
@@ -234,8 +235,8 @@ axes:
 #        r_sense_ohms: 0.110
 #        run_amps: 0.800
 #        homing_amps: 0.800
-#        hold_amps: 0.500
-#        microsteps: 16
+#        hold_amps: 0.700
+#        microsteps: 8
 #        stallguard: 0
 #        stallguard_debug: false
 #        toff_disable: 0
@@ -272,8 +273,8 @@ start:
   must_home: false
 
 coolant:
-  flood_pin: gpio.2
-  mist_pin: gpio.16
+  flood_pin: NO_PIN
+  mist_pin: NO_PIN
   delay_ms: 0
 
 control:
@@ -305,23 +306,36 @@ user_outputs:
   analog3_hz: 5000
   digital0_pin: gpio.26
   digital1_pin: gpio.27
-  digital2_pin: NO_PIN
-  digital3_pin: NO_PIN
+  digital2_pin: gpio.0
+  digital3_pin: gpio.2
+
+##Pendant:
+#uart2:
+# txd_pin: gpio.15
+# rxd_pin: gpio.12
+# rts_pin: NO_PIN
+# cts_pin: NO_PIN
+# baud: 1000000
+# mode: 8N1
+#
+#uart_channel2:
+# report_interval_ms: 75
+# uart_num: 2
 
 #Laser:
-#  pwm_hz: 5000
-#  output_pin: gpio.27
-#  enable_pin: NO_PIN
-#  disable_with_s0: false
-#  s0_with_disable: true
-#  tool_num: 0
-#  speed_map: 0=0.000% 255=100.000%
-#  off_on_alarm: true
+# pwm_hz: 5000
+# output_pin: gpio.2
+# enable_pin: NO_PIN
+# disable_with_s0: false
+# s0_with_disable: true
+# tool_num: 0
+# speed_map: 0=0.000% 1000=100.000%
+# off_on_alarm: true
 
 # pwm:
 #  pwm_hz: 5000
-#  direction_pin: gpio.26
-#  output_pin: gpio.27
+#  direction_pin: gpio.2
+#  output_pin: gpio.0
 #  enable_pin: NO_PIN
 #  disable_with_s0: false
 #  s0_with_disable: true
@@ -331,6 +345,4 @@ user_outputs:
 #  speed_map: 0=0.000% 1000=100.000%
 #  off_on_alarm: false
 
-# 5V out gpio.26/27
-# VMot out gpoi.2/16
-# In's left to right gpoi.25/33/32/35/34/39/36
+# Inputs left to right gpoi.25/33/32/35/34/39/36

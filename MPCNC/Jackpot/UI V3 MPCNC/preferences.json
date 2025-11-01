@@ -12,7 +12,7 @@
   "enableautorepeat": false,
   "enableshortcuts": false,
   "autorepeatdelay": "500",
-  "emergencystop": "#SAFETYDOOR#",
+  "emergencystop": "!",
   "fixedpanels": true,
   "panelsorder": [
    {
@@ -64,10 +64,10 @@
   "enablepolling": true,
   "pollingcmds": [
    {
-    "id": "samplepolling",
-    "name": "1.5s",
+    "id": "v4jfh1vpv",
+    "name": "2s",
     "cmds": "?",
-    "refreshtime": "1500"
+    "refreshtime": "2000"
    }
   ],
   "showterminalpanel": true,
@@ -87,7 +87,7 @@
   "homesingleaxis": true,
   "homecmd": "$H#",
   "zerocmd": "G10 L20 P0 #",
-  "jogstopcmd": "#JOGCANCEL#",
+  "jogstopcmd": "!",
   "showx": true,
   "showy": true,
   "showz": true,
@@ -97,14 +97,15 @@
   "showu": false,
   "showv": false,
   "showw": false,
-  "xyfeedrate": "1000",
-  "zfeedrate": "1000",
+  "xyfeedrate": "3000",
+  "zfeedrate": "900",
   "afeedrate": "1000",
   "bfeedrate": "1000",
   "cfeedrate": "1000",
   "ufeedrate": "1000",
   "vfeedrate": "1000",
   "wfeedrate": "1000",
+  "jogdistancedefault": "100",
   "keymap": [
    {
     "id": "btn+X",
@@ -242,17 +243,9 @@
     "key": ""
    },
    {
-    "id": "rvqcgxzfm",
-    "name": "Save Config",
-    "icon": "Save",
-    "action": "$CD=config.yaml",
-    "type": "CMD",
-    "key": ""
-   },
-   {
     "id": "0wclpq1vx",
     "name": "26 on",
-    "icon": "PlayCircle",
+    "icon": "LogOut",
     "action": "M62 P0",
     "type": "CMD",
     "key": ""
@@ -268,7 +261,7 @@
    {
     "id": "9flzi8o2k",
     "name": "27 on",
-    "icon": "PlayCircle",
+    "icon": "LogOut",
     "action": "M62 P1",
     "type": "CMD",
     "key": ""
@@ -278,6 +271,30 @@
     "name": "27 off",
     "icon": "XCircle",
     "action": "M63 P1",
+    "type": "CMD",
+    "key": ""
+   },
+   {
+    "id": "wc7z4v1ji",
+    "name": "Pin 2 on",
+    "icon": "LogOut",
+    "action": "M62 P2",
+    "type": "CMD",
+    "key": ""
+   },
+   {
+    "id": "eppw9kq8v",
+    "name": "Pin 2 Off",
+    "icon": "XCircle",
+    "action": "M63 P2",
+    "type": "CMD",
+    "key": ""
+   },
+   {
+    "id": "rvqcgxzfm",
+    "name": "Save Config",
+    "icon": "Save",
+    "action": "$CD=config.yaml",
     "type": "CMD",
     "key": ""
    }
@@ -290,9 +307,9 @@
   "showprobepanel": true,
   "openprobeonstart": true,
   "probefeedrate": 20,
-  "maxprobe": 15,
-  "probethickness": "1",
-  "proberetract": "5",
+  "maxprobe": "120",
+  "probethickness": "0.5",
+  "proberetract": "10",
   "probepostcommand": "G10 L20 P1 #selected_axis##probe_thickness#;$J=G91 G21 F1000 Z#probe_retract#",
   "showlaserpanel": false,
   "openlaseronstart": true,
@@ -306,7 +323,7 @@
   "showCoolantctrls": true,
   "showMistctrls": true,
   "showM7ctrls": false,
-  "showoverridespanel": true,
+  "showoverridespanel": false,
   "openoverridesonstart": true
  }
 }
