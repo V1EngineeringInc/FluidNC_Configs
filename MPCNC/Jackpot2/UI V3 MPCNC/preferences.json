@@ -97,8 +97,8 @@
   "showu": false,
   "showv": false,
   "showw": false,
-  "xyfeedrate": "1000",
-  "zfeedrate": "1000",
+  "xyfeedrate": "3000",
+  "zfeedrate": "900",
   "afeedrate": "1000",
   "bfeedrate": "1000",
   "cfeedrate": "1000",
@@ -236,7 +236,7 @@
   "macros": [
    {
     "id": "xsht27tfi",
-    "name": "Disable Motors2",
+    "name": "Disable Motors",
     "icon": "ZapOff",
     "action": "$MD",
     "type": "CMD",
@@ -278,13 +278,13 @@
     "id": "wc7z4v1ji",
     "name": "Pin 2 on",
     "icon": "LogOut",
-    "action": "M62 P3",
+    "action": "M62 P2",
     "type": "CMD",
     "key": ""
    },
    {
     "id": "eppw9kq8v",
-    "name": "Pin 3 Off",
+    "name": "Pin 2 Off",
     "icon": "XCircle",
     "action": "M63 P2",
     "type": "CMD",
