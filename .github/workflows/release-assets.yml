@@ -19,24 +19,35 @@ jobs:
           # Create a directory for zip files
           mkdir -p release-zips
           
-          # Define the specific folders to zip
+          # Define the specific folders to zip (use full paths from repo root)
+          # Format: "path/to/folder:OutputName" or just "path/to/folder" to use folder name
           folders=(
-            "JP3_LR"
-            "JP2_LR"
-            "JP1_LR"
-            "JP3_MPCNC"
-            "JP2_MPCNC"
-            "JP1_MPCNC"
+            "LowRider CNC/Jackpot3/JP3_LR"
+            "LowRider CNC/Jackpot2/JP2_LR"
+            "LowRider CNC/Jackpot/JP1_LR"
+            "MPCNC/Jackpot3/JP3_MPCNC"
+            "MPCNC/Jackpot2/JP2_MPCNC"
+            "MPCNC/Jackpot/JP1_MPCNC"
           )
           
           # Loop through the specified folders
-          for dirname in "${folders[@]}"; do
-            if [ -d "$dirname" ]; then
-              echo "Creating zip for: $dirname"
-              # Create zip file with the folder name (replacing spaces with underscores)
-              zip -r "release-zips/${dirname// /_}.zip" "$dirname"
+          for folder_spec in "${folders[@]}"; do
+            # Check if custom output name is specified
+            if [[ "$folder_spec" == *":"* ]]; then
+              folder_path="${folder_spec%%:*}"
+              output_name="${folder_spec##*:}"
             else
-              echo "Warning: Directory '$dirname' not found, skipping..."
+              folder_path="$folder_spec"
+              # Use the last part of the path as the output name
+              output_name=$(basename "$folder_path")
+            fi
+            
+            if [ -d "$folder_path" ]; then
+              echo "Creating zip for: $folder_path -> ${output_name}.zip"
+              # Create zip file
+              zip -r "release-zips/${output_name// /_}.zip" "$folder_path"
+            else
+              echo "Warning: Directory '$folder_path' not found, skipping..."
             fi
           done
           
