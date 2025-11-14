@@ -21,6 +21,7 @@ Configuration and support files for the FluidNC boards typically used with the V
 
 ## Changelog
 
++ 11-14-25 - added Mike's UI v3 (3.0.0.6), automatic zip bundles with each release
 + 11-1-25 - Add the Jackpot3, change Z max feedrate to 900mm/min, remove webuiv3 .gz for 3.9.9
 + 8-4-25 - Add new V3 UI, 3.0.0-4b1-FluidNC...3.0.0-5, to be removed when this makes it in an official release
 + 7-10-25 - JackPot V2 Initial files and folders
