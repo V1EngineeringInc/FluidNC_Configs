@@ -52,15 +52,15 @@ jobs:
             
             if [ -d "$folder_path" ]; then
               echo "Creating zip for: $folder_path -> ${output_name}.zip"
-              # Change to the folder and zip its contents (not the folder itself)
-              (cd "$folder_path" && zip -r "../../release-zips/${output_name// /_}.zip" .)
+              # Change to the folder and zip its contents using absolute path
+              (cd "$folder_path" && zip -r "$RELEASE_DIR/${output_name// /_}.zip" .)
             else
               echo "Warning: Directory '$folder_path' not found, skipping..."
             fi
           done
           
           # List created zip files
-          ls -lh release-zips/
+          ls -lh "$RELEASE_DIR"
       
       - name: Upload zip files to release
         uses: softprops/action-gh-release@v1
