@@ -13,6 +13,14 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        
+      - name: Debug - Show repository structure
+        run: |
+          echo "=== Repository root contents ==="
+          ls -la
+          echo ""
+          echo "=== Full directory tree ==="
+          find . -type d -name ".git" -prune -o -type d -print | head -50
       
       - name: Create zip files for specific folders
         run: |
