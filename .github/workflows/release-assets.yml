@@ -1,0 +1,51 @@
+name: Create Release Zip Assets
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  build-release-assets:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      
+      - name: Create zip files for specific folders
+        run: |
+          # Create a directory for zip files
+          mkdir -p release-zips
+          
+          # Define the specific folders to zip
+          folders=(
+            "JP3_LR"
+            "JP2_LR"
+            "JP1_LR"
+            "JP3_MPCNC"
+            "JP2_MPCNC"
+            "JP1_MPCNC"
+          )
+          
+          # Loop through the specified folders
+          for dirname in "${folders[@]}"; do
+            if [ -d "$dirname" ]; then
+              echo "Creating zip for: $dirname"
+              # Create zip file with the folder name (replacing spaces with underscores)
+              zip -r "release-zips/${dirname// /_}.zip" "$dirname"
+            else
+              echo "Warning: Directory '$dirname' not found, skipping..."
+            fi
+          done
+          
+          # List created zip files
+          ls -lh release-zips/
+      
+      - name: Upload zip files to release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: release-zips/*.zip
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
