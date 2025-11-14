@@ -13,22 +13,17 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-        
-      - name: Debug - Show repository structure
-        run: |
-          echo "=== Repository root contents ==="
-          ls -la
-          echo ""
-          echo "=== Full directory tree ==="
-          find . -type d -name ".git" -prune -o -type d -print | head -50
       
       - name: Create zip files for specific folders
         run: |
-          # Create a directory for zip files
-          mkdir -p release-zips
+          # Create a directory for zip files (absolute path)
+          RELEASE_DIR="${GITHUB_WORKSPACE}/release-zips"
+          mkdir -p "$RELEASE_DIR"
+          echo "Release directory: $RELEASE_DIR"
           
-          # Define the specific folders to zip (use full paths from repo root)
-          # Format: "path/to/folder:OutputName" or just "path/to/folder" to use folder name
+          # Define the specific folders to zip
+          # Format: "path/to/folder:OutputZipName" or just "path/to/folder" to use folder name
+          # Each folder will be zipped with only its contents (no parent folder structure)
           folders=(
             "LowRider CNC/Jackpot3/JP3_LR"
             "LowRider CNC/Jackpot2/JP2_LR"
@@ -38,9 +33,9 @@ jobs:
             "MPCNC/Jackpot/JP1_MPCNC"
           )
           
-          # Loop through the specified folders
+          # Loop through each specified folder
           for folder_spec in "${folders[@]}"; do
-            # Check if custom output name is specified
+            # Check if custom output name is specified with colon
             if [[ "$folder_spec" == *":"* ]]; then
               folder_path="${folder_spec%%:*}"
               output_name="${folder_spec##*:}"
@@ -50,16 +45,19 @@ jobs:
               output_name=$(basename "$folder_path")
             fi
             
+            # Check if directory exists
             if [ -d "$folder_path" ]; then
               echo "Creating zip for: $folder_path -> ${output_name}.zip"
-              # Change to the folder and zip its contents using absolute path
+              # Change into the folder and zip all contents (files only, no parent folders)
               (cd "$folder_path" && zip -r "$RELEASE_DIR/${output_name// /_}.zip" .)
             else
               echo "Warning: Directory '$folder_path' not found, skipping..."
             fi
           done
           
-          # List created zip files
+          # List all created zip files
+          echo ""
+          echo "=== Created zip files ==="
           ls -lh "$RELEASE_DIR"
       
       - name: Upload zip files to release
